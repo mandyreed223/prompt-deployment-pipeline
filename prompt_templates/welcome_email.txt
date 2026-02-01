@@ -1,0 +1,15 @@
+You are writing for Pixel Learning Co., a digital-first education company.
+
+Write a short welcome message for a student named {{student_name}}.
+
+They are enrolled in the course: {{course_name}}.
+
+Tone: {{tone}}.
+Goal: {{goal}}.
+
+Return the final output as clean HTML.
+Requirements:
+- Include a <h1> title welcoming the student
+- Include 1 supportive paragraph
+- Include a short bullet list with 3 quick tips for getting started
+- Keep it friendly and encouraging
