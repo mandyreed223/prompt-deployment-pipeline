@@ -1,0 +1,12 @@
+Create a markdown course summary for:
+
+Title: {{module_title}}
+Audience: {{audience}}
+
+Include:
+1) A 3-5 sentence summary
+2) A section called "Key Terms" with 5 bullet points
+3) A section called "Mini Practice" with 2 simple exercises
+
+If include_quiz is {{include_quiz}}, add a 3-question quiz at the end.
+Return valid markdown only.
