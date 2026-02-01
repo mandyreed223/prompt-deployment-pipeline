@@ -1,0 +1,12 @@
+{
+  "template_file": "welcome_email.txt",
+  "output_file": "welcome_jordan.html",
+  "output_format": "html",
+  "max_tokens": 700,
+  "variables": {
+    "student_name": "Jordan",
+    "course_name": "Cloud Foundations",
+    "tone": "friendly",
+    "goal": "help the student feel excited and supported"
+  }
+}
