@@ -4,17 +4,10 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - "prompts/**"
-      - "prompt_templates/**"
-      - "scripts/**"
-      - "requirements.txt"
-      - ".github/workflows/**"
 
 jobs:
   generate-beta:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -29,7 +22,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # For now, do a dry run so Bedrock/AWS isn't required yet.
       - name: Generate outputs (dry run)
         run: |
           python scripts/process_prompt.py --dry-run
