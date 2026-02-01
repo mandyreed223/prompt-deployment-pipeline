@@ -1,0 +1,11 @@
+{
+  "template_file": "module_summary.md.txt",
+  "output_file": "summary_module1.md",
+  "output_format": "md",
+  "max_tokens": 900,
+  "variables": {
+    "module_title": "Module 1: Intro to Cloud Computing",
+    "audience": "beginner learners",
+    "include_quiz": "yes"
+  }
+}
