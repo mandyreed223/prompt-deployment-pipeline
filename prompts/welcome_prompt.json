@@ -6,7 +6,7 @@
   "variables": {
     "student_name": "Jordan",
     "course_name": "Cloud Foundations",
-    "tone": "friendly",
+    "tone": "encouraging",
     "goal": "help the student feel excited and supported"
   }
 }
