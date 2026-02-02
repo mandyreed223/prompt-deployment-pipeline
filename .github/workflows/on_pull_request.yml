@@ -4,10 +4,17 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "prompts/**"
+      - "prompt_templates/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/**"
 
 jobs:
   generate-beta:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -22,6 +29,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate outputs (dry run)
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Generate + Upload (beta)
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET_BETA: ${{ secrets.S3_BUCKET_BETA }}
+          S3_BUCKET_PROD: ${{ secrets.S3_BUCKET_PROD }}
+          DEPLOY_ENV: beta
         run: |
-          python scripts/process_prompt.py --dry-run
+          python scripts/process_prompt.py
